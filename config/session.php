@@ -230,4 +230,19 @@ return [
 
     'serialization' => 'json',
 
+    /*
+    |--------------------------------------------------------------------------
+    | Remember Me Cookie Duration
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the number of minutes that you wish the "Remember Me"
+    | authentication cookie to remain valid before it expires. By default,
+    | Laravel keeps this cookie active for 5 years, but this configuration
+    | allows you to override it easily via your environment file.
+    |
+    | Default: 43200 (30 days)
+    |
+    */
+
+    'remember_me_lifetime' => env('REMEMBER_ME_LIFETIME', 43200),
 ];

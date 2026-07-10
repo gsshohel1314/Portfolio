@@ -19,6 +19,9 @@ class Login extends Controller
             'password' => ['required', 'string'],
         ]);
 
+        // Set custom "Remember Me" duration from session config
+        Auth::setRememberDuration(config('session.remember_me_lifetime', 43200));
+
         // Attempt to log in
         if (Auth::attempt($credentials, $request->boolean('remember'))) {
             // Regenerate session for security
