@@ -10,7 +10,7 @@ Route::get('/', function () {
     return response()->json([
         'app' => 'Shohel Rana Portfolio API Backend',
         'status' => 'Running',
-        'version' => '1.0.0'
+        'version' => '1.0.0',
     ]);
 });
 
@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
     // Dashboard route
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard', [
-            'name' => 'Shohel'
+            'name' => 'Shohel',
         ]);
     })->name('dashboard');
 });
