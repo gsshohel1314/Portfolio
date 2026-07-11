@@ -10,7 +10,7 @@
         >
             <div
                 v-if="show && mounted"
-                class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+                class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
                 @click.self="close"
             >
                 <Transition
@@ -23,24 +23,22 @@
                 >
                     <div
                         v-if="show && mounted"
-                        class="relative w-full max-w-md max-h-[90vh] flex flex-col rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-lg"
+                        class="relative flex max-h-[90vh] w-full max-w-md flex-col rounded-lg border border-zinc-200 bg-white shadow-lg dark:border-zinc-800 dark:bg-zinc-900"
                     >
                         <!-- Header -->
                         <div
-                            class="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800 px-5 py-4"
+                            class="flex items-center justify-between border-b border-zinc-200 px-5 py-4 dark:border-zinc-800"
                         >
-                            <h3
-                                class="text-lg font-medium text-zinc-900 dark:text-white"
-                            >
+                            <h3 class="text-lg font-medium text-zinc-900 dark:text-white">
                                 {{ title }}
                             </h3>
                             <button
                                 type="button"
                                 @click="close"
-                                class="text-zinc-400 hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-white rounded-lg w-8 h-8 inline-flex justify-center items-center cursor-pointer transition-colors"
+                                class="inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-white"
                             >
                                 <svg
-                                    class="w-5 h-5"
+                                    class="h-5 w-5"
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
                                     height="24"
@@ -61,7 +59,7 @@
 
                         <!-- Body -->
                         <div
-                            class="px-5 py-4 space-y-4 overflow-y-auto text-sm leading-relaxed text-zinc-600 dark:text-zinc-300"
+                            class="space-y-4 overflow-y-auto px-5 py-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300"
                         >
                             <slot />
                         </div>
@@ -69,7 +67,7 @@
                         <!-- Footer -->
                         <div
                             v-if="$slots.footer"
-                            class="flex items-center gap-3 border-t border-zinc-200 dark:border-zinc-800 px-5 py-4"
+                            class="flex items-center gap-3 border-t border-zinc-200 px-5 py-4 dark:border-zinc-800"
                         >
                             <slot name="footer" />
                         </div>
@@ -81,20 +79,20 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted } from "vue";
 
 defineProps({
     show: { type: Boolean, default: false },
-    title: { type: String, default: '' },
-})
+    title: { type: String, default: "" },
+});
 
-const emit = defineEmits(['close'])
+const emit = defineEmits(["close"]);
 
-const mounted = ref(false)
+const mounted = ref(false);
 
 onMounted(() => {
-  mounted.value = true
-})
+    mounted.value = true;
+});
 
-const close = () => emit('close')
+const close = () => emit("close");
 </script>

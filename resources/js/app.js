@@ -1,3 +1,3 @@
-import { createInertiaApp } from '@inertiajs/vue3';
+import { createInertiaApp } from "@inertiajs/vue3";
 
-createInertiaApp()
+createInertiaApp();

@@ -2,7 +2,7 @@
     <AuthLayout>
         <div class="flex flex-col space-y-2 text-center">
             <h1
-                class="text-2xl font-bold leading-tight tracking-tight text-zinc-900 dark:text-white"
+                class="text-2xl leading-tight font-bold tracking-tight text-zinc-900 dark:text-white"
             >
                 Create an account
             </h1>
@@ -16,7 +16,7 @@
             <div>
                 <label
                     for="name"
-                    class="block mb-1.5 text-sm font-medium text-zinc-900 dark:text-zinc-200"
+                    class="mb-1.5 block text-sm font-medium text-zinc-900 dark:text-zinc-200"
                 >
                     Full Name
                 </label>
@@ -32,7 +32,7 @@
                         'bg-white dark:bg-zinc-800/50',
                         'text-zinc-900 dark:text-white',
                         'placeholder-zinc-400 dark:placeholder-zinc-500',
-                        'focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500',
+                        'focus:ring-primary-500/30 focus:border-primary-500 focus:ring-2 focus:outline-none',
                         form.errors.name
                             ? 'border-red-400 dark:border-red-500'
                             : 'border-zinc-200 dark:border-zinc-700',
@@ -40,10 +40,7 @@
                     placeholder="John Doe"
                     required
                 />
-                <p
-                    v-if="form.errors.name"
-                    class="mt-1.5 text-xs text-red-500 font-medium"
-                >
+                <p v-if="form.errors.name" class="mt-1.5 text-xs font-medium text-red-500">
                     {{ form.errors.name }}
                 </p>
             </div>
@@ -52,7 +49,7 @@
             <div>
                 <label
                     for="email"
-                    class="block mb-1.5 text-sm font-medium text-zinc-900 dark:text-zinc-200"
+                    class="mb-1.5 block text-sm font-medium text-zinc-900 dark:text-zinc-200"
                 >
                     Email Address
                 </label>
@@ -68,7 +65,7 @@
                         'bg-white dark:bg-zinc-800/50',
                         'text-zinc-900 dark:text-white',
                         'placeholder-zinc-400 dark:placeholder-zinc-500',
-                        'focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500',
+                        'focus:ring-primary-500/30 focus:border-primary-500 focus:ring-2 focus:outline-none',
                         form.errors.email
                             ? 'border-red-400 dark:border-red-500'
                             : 'border-zinc-200 dark:border-zinc-700',
@@ -76,10 +73,7 @@
                     placeholder="name@example.com"
                     required
                 />
-                <p
-                    v-if="form.errors.email"
-                    class="mt-1.5 text-xs text-red-500 font-medium"
-                >
+                <p v-if="form.errors.email" class="mt-1.5 text-xs font-medium text-red-500">
                     {{ form.errors.email }}
                 </p>
             </div>
@@ -88,7 +82,7 @@
             <div>
                 <label
                     for="password"
-                    class="block mb-1.5 text-sm font-medium text-zinc-900 dark:text-zinc-200"
+                    class="mb-1.5 block text-sm font-medium text-zinc-900 dark:text-zinc-200"
                 >
                     Password
                 </label>
@@ -103,7 +97,7 @@
                             'bg-white dark:bg-zinc-800/50',
                             'text-zinc-900 dark:text-white',
                             'placeholder-zinc-400 dark:placeholder-zinc-500',
-                            'focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500',
+                            'focus:ring-primary-500/30 focus:border-primary-500 focus:ring-2 focus:outline-none',
                             form.errors.password
                                 ? 'border-red-400 dark:border-red-500'
                                 : 'border-zinc-200 dark:border-zinc-700',
@@ -114,7 +108,7 @@
                     <button
                         type="button"
                         @click="showPassword = !showPassword"
-                        class="absolute inset-y-0 right-0 flex items-center pr-3 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors cursor-pointer"
+                        class="absolute inset-y-0 right-0 flex cursor-pointer items-center pr-3 text-zinc-400 transition-colors hover:text-zinc-600 dark:hover:text-zinc-300"
                         tabindex="-1"
                     >
                         <svg
@@ -154,10 +148,7 @@
                         </svg>
                     </button>
                 </div>
-                <p
-                    v-if="form.errors.password"
-                    class="mt-1.5 text-xs text-red-500 font-medium"
-                >
+                <p v-if="form.errors.password" class="mt-1.5 text-xs font-medium text-red-500">
                     {{ form.errors.password }}
                 </p>
             </div>
@@ -166,7 +157,7 @@
             <div>
                 <label
                     for="password_confirmation"
-                    class="block mb-1.5 text-sm font-medium text-zinc-900 dark:text-zinc-200"
+                    class="mb-1.5 block text-sm font-medium text-zinc-900 dark:text-zinc-200"
                 >
                     Confirm Password
                 </label>
@@ -181,7 +172,7 @@
                             'bg-white dark:bg-zinc-800/50',
                             'text-zinc-900 dark:text-white',
                             'placeholder-zinc-400 dark:placeholder-zinc-500',
-                            'focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500',
+                            'focus:ring-primary-500/30 focus:border-primary-500 focus:ring-2 focus:outline-none',
                             form.errors.password_confirmation
                                 ? 'border-red-400 dark:border-red-500'
                                 : 'border-zinc-200 dark:border-zinc-700',
@@ -192,7 +183,7 @@
                     <button
                         type="button"
                         @click="showPasswordConfirmation = !showPasswordConfirmation"
-                        class="absolute inset-y-0 right-0 flex items-center pr-3 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors cursor-pointer"
+                        class="absolute inset-y-0 right-0 flex cursor-pointer items-center pr-3 text-zinc-400 transition-colors hover:text-zinc-600 dark:hover:text-zinc-300"
                         tabindex="-1"
                     >
                         <svg
@@ -234,7 +225,7 @@
                 </div>
                 <p
                     v-if="form.errors.password_confirmation"
-                    class="mt-1.5 text-xs text-red-500 font-medium"
+                    class="mt-1.5 text-xs font-medium text-red-500"
                 >
                     {{ form.errors.password_confirmation }}
                 </p>
@@ -244,11 +235,11 @@
             <button
                 type="submit"
                 :disabled="form.processing"
-                class="w-full flex items-center justify-center gap-2 text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+                class="bg-primary-600 hover:bg-primary-700 focus:ring-primary-300 dark:focus:ring-primary-800 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-center text-sm font-medium text-white transition-colors focus:ring-4 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
             >
                 <svg
                     v-if="form.processing"
-                    class="animate-spin h-4 w-4"
+                    class="h-4 w-4 animate-spin"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -271,11 +262,11 @@
             </button>
         </form>
 
-        <p class="px-4 mt-6 text-center text-sm text-zinc-500 dark:text-zinc-400">
+        <p class="mt-6 px-4 text-center text-sm text-zinc-500 dark:text-zinc-400">
             Already have an account?
             <Link
                 href="/login"
-                class="font-medium text-primary-600 hover:text-primary-700 dark:text-primary-500 dark:hover:text-primary-400 hover:underline transition-colors"
+                class="text-primary-600 hover:text-primary-700 dark:text-primary-500 dark:hover:text-primary-400 font-medium transition-colors hover:underline"
             >
                 Sign In
             </Link>

@@ -3,7 +3,10 @@
         <!-- Navbar -->
         <nav class="flex items-center justify-between bg-white px-8 py-4 shadow-sm">
             <h1 class="text-xl font-bold text-slate-800">My Dashboard</h1>
-            <button @click="logout" class="rounded-md bg-red-500 px-4 py-2 text-sm font-medium text-white hover:bg-red-600">
+            <button
+                @click="logout"
+                class="rounded-md bg-red-500 px-4 py-2 text-sm font-medium text-white hover:bg-red-600"
+            >
                 Logout
             </button>
         </nav>
@@ -19,13 +22,13 @@
 </template>
 
 <script setup>
-import { router } from '@inertiajs/vue3'
+import { router } from "@inertiajs/vue3";
 
 defineProps({
-    name: String
-})
+    name: String,
+});
 
-const logout = () => {    
-    router.post('/logout')
-}
+const logout = () => {
+    router.post("/logout");
+};
 </script>
