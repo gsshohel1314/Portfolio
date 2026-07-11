@@ -20,6 +20,11 @@ export default defineConfig({
         vue(),
         inertia(),
     ],
+    resolve: {
+        alias: {
+            '@': '/resources/js',
+        },
+    },
     server: {
         watch: {
             ignored: [
