@@ -2,5 +2,13 @@
     "[php]": {
         "editor.defaultFormatter": "open-southeners.laravel-pint",
         "editor.formatOnSave": true
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
     }
 }
